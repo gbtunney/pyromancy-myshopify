@@ -1,0 +1,20 @@
+{
+    "extends": "@snailicide/build-config/tsconfig-base",
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["ESNext", "DOM"],
+        "composite": true,
+        "noEmit": true,
+        "module": "ESNext",
+        "rootDir": ".",
+        "types": ["node"],
+        "resolveJsonModule": true /* Enable importing .json files. */
+    },
+    "exclude": ["./node_modules"],
+    "include": ["./**/*.test.ts"],
+    "references": [
+        //   { "path": "./src" }, temp disabled
+        { "path": "./src/global_settings" },
+        { "path": "./src/example_modules" }
+    ]
+}

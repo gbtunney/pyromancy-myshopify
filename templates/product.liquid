@@ -1,0 +1,127 @@
+{% section 'product-template' %}
+
+{% if collection %}
+  <div class='full-width full-width--return-link'>
+    <a href='{{ collection.url }}' class='h1 return-link'>
+      {% include 'icon-arrow-thin-left' %}
+      {{ 'products.product.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{% endif %}
+
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  window.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  }
+</script>
+
+<script>
+  $(document).ready(function () {
+    $('ul.tabs').each(function () {
+      var active,
+        content,
+        links = $(this).find('a')
+      active = links.first().addClass('active')
+      content = $(active.attr('href'))
+      links.not(':first').each(function () {
+        $($(this).attr('href')).hide()
+      })
+      $(this)
+        .find('a')
+        .click(function (e) {
+          active.removeClass('active')
+          content.hide()
+          active = $(this)
+          content = $($(this).attr('href'))
+          active.addClass('active')
+          content.show()
+          return false
+        })
+    })
+  })
+</script>
+<style>
+  ul.tabs {
+    /* border-bottom: 1px solid #DDDDDD;*/
+    display: block;
+    margin: 0 0 0px;
+    padding: 0;
+  }
+  ul.tabs li {
+    text-transform: uppercase;
+    display: block;
+    float: left;
+    height: 30px;
+    margin-bottom: 0;
+
+    padding: 0px;
+    width: auto;
+  }
+  ul.tabs li a {
+    /*-moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  
+  border-color: #DDDDDD !important;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;*/
+    display: block;
+    /* font-size: 13px;*/
+    height: 29px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 20px;
+    text-decoration: none;
+    width: auto;
+    color: #695e48;
+    background: none repeat scroll 0 0 #463715;
+    border-bottom: none !important;
+  }
+  ul.tabs li a.active {
+    background: none repeat scroll 0 0 #33250d;
+    /*border-left-width: 1px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+ */
+    height: 30px;
+    /* margin: 0 0 0 -1px;
+  padding-top: 4px;
+    top: -4px;   color: ##bdba9c;*/
+    color: #bdba9c;
+    position: relative;
+  }
+  ul.tabs li:first-child a.active {
+    margin-left: 0;
+  }
+  ul.tabs li:first-child a {
+    border-top-left-radius: 2px;
+    border-width: 1px 1px 0;
+  }
+  ul.tabs li:last-child a {
+    border-top-right-radius: 2px;
+  }
+  ul.tabs:before,
+  ul.tabs:after {
+    content: ' ';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+  }
+  ul.tabs:after {
+    clear: both;
+  }
+
+  #tabbed-pane {
+    background: #33250d;
+    padding: 20px;
+  }
+</style>

@@ -1,0 +1,81 @@
+<div class='page-width'>
+  <div class='section-block section-block--padding'>
+    {% if section.settings.title_enable %}
+      <div class='section-block__header text-center'>
+        <h4 class='h1--mini section-block__title'>{{ section.settings.title }}</h4>
+        <p class='section-block__subtext'>{{ section.settings.subtitle }}</p>
+      </div>
+    {% endif %}
+    <div class='grid'>
+      <div class='grid__item medium-up--two-thirds medium-up--push-one-sixth'>
+        <div class='form-vertical'>
+          {% form 'customer' %}
+            {{ form.errors | default_errors }}
+            {% if form.posted_successfully? %}
+              <p class='form-success'>{{ 'general.newsletter_form.confirmation' | t }}</p>
+            {% else %}
+              <input type='hidden' name='contact[tags]' value='newsletter'>
+              <label for='NewsletterEmail-{{ block.id }}' class='label--hidden'>
+                {{- 'general.newsletter_form.newsletter_label' | t -}}
+              </label>
+              <div class='input-group'>
+                <input
+                  type='email'
+                  value='{% if customer %}{{ customer.email }}{% endif %}'
+                  placeholder='{{ 'general.newsletter_form.newsletter_placeholder' | t }}'
+                  name='contact[email]'
+                  id='NewsletterEmail-{{ block.id }}'
+                  class='input-group__field'
+                  autocorrect='off'
+                  autocapitalize='off'>
+                <div class='input-group__btn'>
+                  <button type='submit' class='btn btn--narrow' name='commit'>
+                    {% include 'icon-arrow-right' %}
+                    <span class='icon__fallback-text'>{{ 'general.newsletter_form.submit' | t }}</span>
+                  </button>
+                </div>
+              </div>
+            {% endif %}
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "title_enable",
+      "label": "Show header",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Subscribe to our newsletter"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtext",
+      "default": "A short sentence describing what someone will receive by subscribing"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter",
+      "category": "Promotional",
+      "settings": {
+        "title_enable": true,
+        "subtitle": "Promotions, new products and sales. Directly to your inbox"
+      }
+    }
+  ]
+}
+{% endschema %}

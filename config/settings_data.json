@@ -1,0 +1,404 @@
+{
+    "current": {
+        "color_header_bg": "#1e1205",
+        "color_header_links": "#bdba9c",
+        "color_body_bg": "#2e1c08",
+        "color_content_bg": "#64551f",
+        "color_body_headings": "#1e1205",
+        "color_body_text": "#bdba9c",
+        "color_button_bg": "#d2c364",
+        "color_button_text": "#fff",
+        "color_footer_bg": "#1e1205",
+        "color_footer_text": "#fff",
+        "color_hero_text": "#bdba9c",
+        "color_hero_bg": "#9d954b",
+        "type_accent_family": "Google_Unica+One_400_sans",
+        "type_accent_bold": false,
+        "type_accent_spacing": true,
+        "type_accent_transform": true,
+        "type_base_family": "Google_Karla_400_sans",
+        "type_base_size": "16px",
+        "type_nav_size": "14px",
+        "type_nav_spacing": true,
+        "type_nav_transform": true,
+        "product_images_padding": true,
+        "product_vendor_enable": true,
+        "social_facebook_link": "https://www.facebook.com/PyromancyFirePerformanceTroupe/",
+        "social_twitter_link": "https://twitter.com/gbtunney",
+        "social_pinterest_link": "",
+        "social_instagram_link": "https://www.instagram.com/snailicide/",
+        "social_tumblr_link": "http://snailicide.tumblr.com",
+        "social_snapchat_link": "",
+        "social_youtube_link": "https://www.youtube.com/user/gbtunney",
+        "social_vimeo_link": "",
+        "social_sharing_products": true,
+        "social_sharing_blog": true,
+        "share_facebook": true,
+        "share_twitter": true,
+        "share_pinterest": true,
+        "favicon": "shopify://shop_images/favicon.png",
+        "checkout_header_image": "",
+        "checkout_logo_image": "shopify://shop_images/pyromancy-checkout-header_7a2b6d74-e2b4-426a-97a3-46ee86de9183.png",
+        "checkout_logo_position": "left",
+        "checkout_logo_size": "medium",
+        "checkout_body_background_image": "",
+        "checkout_body_background_color": "#1e1105",
+        "checkout_input_background_color_mode": "transparent",
+        "checkout_sidebar_background_image": "",
+        "checkout_sidebar_background_color": "#fbcb58",
+        "checkout_heading_font": "Source Sans Pro",
+        "checkout_body_font": "Roboto",
+        "checkout_accent_color": "#d2c364",
+        "checkout_button_color": "#f9cb57",
+        "checkout_error_color": "#ff6d6d",
+        "checkout_banner_background_color": "#fff",
+        "checkout_call_to_action_color": "#006eff",
+        "checkout_use_header_image": false,
+        "color_newsletter_input": "#1a1a1a",
+        "sections": {
+            "slideshow": {
+                "type": "slideshow",
+                "blocks": {
+                    "placeholder": {
+                        "type": "slide",
+                        "settings": {
+                            "image": "shopify://shop_images/banner-sunburst_d4585e83-dd24-49ee-80ee-1e775cfd84fe.png",
+                            "title": "",
+                            "subheading": "View all products",
+                            "link": "shopify://collections/sunburst-collection"
+                        }
+                    },
+                    "1481495103127": {
+                        "type": "slide",
+                        "settings": {
+                            "image": "shopify://shop_images/banner-diablo_fd2c5a2f-064b-421c-b6a8-5723ea5dc563.png",
+                            "title": "The Diablo",
+                            "subheading": "View collection>",
+                            "link": "shopify://collections/the-diablo"
+                        }
+                    },
+                    "1481497818335": {
+                        "type": "slide",
+                        "settings": {
+                            "image": "shopify://shop_images/banner-badge_d889edea-ab36-415d-a49e-bd3aaf2537f1.png",
+                            "title": "Pyromancy Vintage",
+                            "subheading": "See collection>",
+                            "link": "shopify://collections/pyromancy-badge-collection"
+                        }
+                    },
+                    "1481499816805": {
+                        "type": "slide",
+                        "settings": {
+                            "image": "shopify://shop_images/banner-symbols.png",
+                            "title": "Pyromancy Logo",
+                            "subheading": "See collection>",
+                            "link": "shopify://collections/pyromancy-logo-collection"
+                        }
+                    }
+                },
+                "block_order": [
+                    "1481497818335",
+                    "1481499816805",
+                    "1481495103127",
+                    "placeholder"
+                ],
+                "settings": {}
+            },
+            "footer": {
+                "type": "footer",
+                "blocks": {
+                    "1482957594170": {
+                        "type": "text",
+                        "settings": {
+                            "title": "About",
+                            "text": "<p>Established 2010 - Fashion &amp; flow arts Inspired brand. We are Pyromancers, manipulators of fire and light, diviners of heat and movement. We work feats of wonder with futuristic materials, geometric shapes and texture.</p>"
+                        }
+                    },
+                    "linklist": {
+                        "type": "menu",
+                        "settings": {
+                            "link_list": "footer-links"
+                        }
+                    },
+                    "1482957652575": {
+                        "type": "menu",
+                        "settings": {
+                            "link_list": "legal"
+                        }
+                    },
+                    "1482958157466": {
+                        "type": "social",
+                        "settings": {
+                            "title_enable": true,
+                            "title": "Follow us",
+                            "align": "center"
+                        }
+                    }
+                },
+                "block_order": [
+                    "1482957594170",
+                    "linklist",
+                    "1482957652575",
+                    "1482958157466"
+                ],
+                "settings": {}
+            },
+            "featured-collections": {
+                "type": "featured-collections",
+                "blocks": {
+                    "featured-collections-0": {
+                        "type": "collection",
+                        "settings": {
+                            "collection": "pyromancy-logo-collection"
+                        }
+                    },
+                    "featured-collections-1": {
+                        "type": "collection",
+                        "settings": {
+                            "collection": "pyromancy-badge-collection"
+                        }
+                    },
+                    "featured-collections-2": {
+                        "type": "collection",
+                        "settings": {
+                            "collection": "the-diablo"
+                        }
+                    }
+                },
+                "block_order": [
+                    "featured-collections-0",
+                    "featured-collections-1",
+                    "featured-collections-2"
+                ],
+                "settings": {
+                    "stretch_collection_image": false
+                }
+            },
+            "image-content": {
+                "type": "image-content",
+                "blocks": {
+                    "image-content-0": {
+                        "type": "image_block",
+                        "settings": {
+                            "image": "shopify://shop_images/bottom-imh.png"
+                        }
+                    },
+                    "image-content-1": {
+                        "type": "text_block",
+                        "settings": {
+                            "title": "Pyromancy Fire Performance Troupe",
+                            "text": "<p>p<strong>y&middot;ro&middot;man&middot;cy</strong><br> &ensp; &ensp;/ˈpaɪrəˌm&aelig;nsi/ [pahy-ruh-man-see]<br> &ndash;noun<br> divination by fire, or by forms appearing in fire.</p>",
+                            "align": "left"
+                        }
+                    }
+                },
+                "block_order": ["image-content-0", "image-content-1"],
+                "settings": {}
+            },
+            "header": {
+                "type": "header",
+                "settings": {
+                    "logo": "shopify://shop_images/sm-logo.png",
+                    "logo_max_width": "300",
+                    "main_linklist": "pyr-header-menu",
+                    "promo_bar_enable": true,
+                    "promo_bar_text": "Its the grand reopening of Pyromancy Shop. Please contact with feedback!",
+                    "promo_bar_link": "shopify://pages/contact-1"
+                }
+            },
+            "collection-filters": {
+                "type": "collection-filters",
+                "settings": {
+                    "product_tags_enable": true,
+                    "product_sorting_enable": true
+                }
+            },
+            "1481613531648": {
+                "type": "newsletter",
+                "settings": {
+                    "title_enable": true,
+                    "title": "Subscribe to our newsletter",
+                    "subtitle": "Promotions, new products and sales. Directly to your inbox"
+                }
+            },
+            "product-template": {
+                "type": "product-template",
+                "settings": {
+                    "enable_ajax": true,
+                    "stock_enable": false
+                }
+            }
+        },
+        "content_for_index": [
+            "featured-collections",
+            "image-content",
+            "1481613531648"
+        ]
+    },
+    "presets": {
+        "Snowboards": {
+            "checkout_accent_color": "#006eff",
+            "checkout_banner_background_color": "#fff",
+            "checkout_button_color": "#006eff",
+            "checkout_call_to_action_color": "#006eff",
+            "checkout_use_header_image": false,
+            "color_body_bg": "#f7f7f7",
+            "color_body_headings": "#030303",
+            "color_body_text": "#666",
+            "color_button_bg": "#006eff",
+            "color_button_text": "#fff",
+            "color_content_bg": "#fff",
+            "color_footer_bg": "#030303",
+            "color_footer_text": "#fff",
+            "color_header_bg": "#030303",
+            "color_header_links": "#fff",
+            "color_hero_bg": "#006eff",
+            "color_hero_text": "#fff",
+            "color_newsletter_input": "#1a1a1a",
+            "type_accent_bold": false,
+            "type_accent_family": "Google_Unica+One_400_sans",
+            "type_accent_spacing": true,
+            "type_accent_transform": true,
+            "type_base_family": "Google_Karla_400_sans",
+            "type_base_size": "16px",
+            "type_nav_size": "14px",
+            "type_nav_spacing": true,
+            "type_nav_transform": true,
+            "sections": {
+                "slideshow": {
+                    "type": "slideshow",
+                    "blocks": {
+                        "placeholder": {
+                            "type": "slide",
+                            "settings": {}
+                        }
+                    },
+                    "block_order": ["placeholder"],
+                    "settings": {}
+                },
+                "footer": {
+                    "type": "footer",
+                    "blocks": {
+                        "linklist": {
+                            "type": "menu",
+                            "settings": {}
+                        },
+                        "social": {
+                            "type": "social",
+                            "settings": {}
+                        }
+                    },
+                    "block_order": ["linklist", "social"],
+                    "settings": {}
+                },
+                "featured-collections": {
+                    "type": "featured-collections",
+                    "blocks": {
+                        "featured-collections-0": {
+                            "type": "collection",
+                            "settings": {}
+                        },
+                        "featured-collections-1": {
+                            "type": "collection",
+                            "settings": {}
+                        },
+                        "featured-collections-2": {
+                            "type": "collection",
+                            "settings": {}
+                        }
+                    },
+                    "block_order": [
+                        "featured-collections-0",
+                        "featured-collections-1",
+                        "featured-collections-2"
+                    ],
+                    "settings": {}
+                },
+                "featured-products": {
+                    "type": "featured-products",
+                    "settings": {
+                        "collection": "frontpage"
+                    }
+                },
+                "image-content": {
+                    "type": "image-content",
+                    "blocks": {
+                        "image-content-0": {
+                            "type": "image_block",
+                            "settings": {}
+                        },
+                        "image-content-1": {
+                            "type": "text_block",
+                            "settings": {}
+                        }
+                    },
+                    "block_order": ["image-content-0", "image-content-1"],
+                    "settings": {}
+                }
+            },
+            "content_for_index": [
+                "featured-collections",
+                "featured-products",
+                "image-content"
+            ]
+        },
+        "Outdoors": {
+            "checkout_accent_color": "#f4743c",
+            "checkout_banner_background_color": "#fff",
+            "checkout_button_color": "#f4743c",
+            "checkout_call_to_action_color": "#f4743c",
+            "checkout_use_header_image": false,
+            "color_body_bg": "#f7f7f7",
+            "color_body_headings": "#1a1a1a",
+            "color_body_text": "#666",
+            "color_button_bg": "#c04f1d",
+            "color_button_text": "#fff",
+            "color_content_bg": "#ffffff",
+            "color_footer_bg": "#213236",
+            "color_footer_text": "#fff",
+            "color_header_bg": "#213236",
+            "color_header_links": "#ffffff",
+            "color_hero_bg": "#f4743c",
+            "color_hero_text": "#fff",
+            "color_newsletter_input": "#425154",
+            "type_accent_bold": true,
+            "type_accent_family": "Google_Lora_400_serif",
+            "type_accent_spacing": false,
+            "type_accent_transform": false,
+            "type_base_family": "Google_Roboto_400_sans",
+            "type_base_size": "14px",
+            "type_nav_size": "15px",
+            "type_nav_spacing": false,
+            "type_nav_transform": false
+        },
+        "Boxing": {
+            "checkout_accent_color": "#d8232f",
+            "checkout_banner_background_color": "#fff",
+            "checkout_button_color": "#d8232f",
+            "checkout_call_to_action_color": "#d8232f",
+            "checkout_use_header_image": false,
+            "color_body_bg": "#f0f0f0",
+            "color_body_headings": "#222222",
+            "color_body_text": "#666",
+            "color_button_bg": "#d8232f",
+            "color_button_text": "#fff",
+            "color_content_bg": "#ffffff",
+            "color_footer_bg": "#222222",
+            "color_footer_text": "#ffffff",
+            "color_header_bg": "#222222",
+            "color_header_links": "#ffffff",
+            "color_hero_bg": "#d8232f",
+            "color_hero_text": "#fff",
+            "color_newsletter_input": "#303030",
+            "type_accent_bold": true,
+            "type_accent_family": "Google_Open+Sans+Condensed_400_sans",
+            "type_accent_spacing": false,
+            "type_accent_transform": true,
+            "type_base_family": "Google_Source+Sans+Pro_400_sans",
+            "type_base_size": "17px",
+            "type_nav_size": "14px",
+            "type_nav_spacing": true,
+            "type_nav_transform": true
+        }
+    }
+}

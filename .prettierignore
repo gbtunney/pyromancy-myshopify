@@ -1,0 +1,11 @@
+#idk why shopify's own plugin is broke on these, but here we are
+sections/announcement-bar.liquid
+sections/cart-drawer.liquid
+sections/cart-live-region-text.liquid
+sections/cart-notification-button.liquid
+sections/main-product.liquid
+sections/main-search.liquid
+sections/header.liquid
+
+snippets/product-media.liquid
+snippets/product-thumbnail.liquid

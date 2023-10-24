@@ -1,0 +1,13 @@
+package.json
+pnpm-lock.yaml
+.pnpm-debug.log
+vite.config.ts
+windi.config.ts
+commitlint.config.js
+tsconfig.json
+node_modules/
+jspm_packages/
+.npmrc
+.prettierignore
+.husky/
+src/

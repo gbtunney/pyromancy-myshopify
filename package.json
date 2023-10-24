@@ -1,0 +1,83 @@
+{
+    "name": "@pyromancyshop/venture",
+    "private": true,
+    "version": "2.0.0",
+    "description": "Venture Theme - Pyromancy Shop",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "pnpm --package=@shopify/theme dlx shopify theme list",
+        "\n========== BUILD >> ==========": "",
+        "build": "pnpm run build:ts && pnpm run build:vue-ts && pnpm run build:vite",
+        "build:vite": "vite build",
+        "build:ts": "tsc --build",
+        "build:vue-ts": "vue-tsc",
+        "\n========== DEV >> ==========": "",
+        "dev": "pnpm run build:vite && pnpm run vite:serve && pnpm exec shopify theme dev",
+        "vite:serve": "vite",
+        "shopify:dev": "shopify theme dev --store=gbt-vite-test.myshopify.com --theme 139617829154",
+        "\n========== PUBLISH >> ==========": "",
+        "\n========== CLEAN >> ==========": "",
+        "clean": "pnpm clean:ts && pnpm clean:build",
+        "clean:ts": "tsc --build --clean",
+        "clean:build": "rm -R -f ./{sections,snippets}/g-* && rm -R -f ./assets",
+        "\n========== CODE STYLE >> ==========": "",
+        "lint": "cross-var eslint \"{$npm_package_config_eslint_path}.{$npm_package_config_eslint_extensions}\" --ignore-path .gitignore -c $npm_package_config_eslint_config",
+        "prettier": "cross-var prettier {$npm_package_config_prettier_path}.{$npm_package_config_prettier_extensions}",
+        "\n========== CHECK >> ==========": "",
+        "check": "",
+        "shopify:check": "pnpm shopify theme check",
+        "\n========== FIX >> ==========": "",
+        "fix": "pnpm prettier --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gbtunney/shopify-monorepo.git"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Gillian Tunney",
+        "email": "gbtunney@mac.com"
+    },
+    "devDependencies": {
+        "@shopify/cli": "^3.50.0",
+        "@shopify/prettier-plugin-liquid": "^1.3.2",
+        "@shopify/theme": "^3.50.0",
+        "@snailicide/build-config": "^0.2.5",
+        "@snailicide/g-library": "^0.2.2",
+        "@snailicide/g-shopify-library": "^0.2.1",
+        "@snailicide/vite-plugin-shopify-liquid-modules": "0.1.0",
+        "@snailicide/vite-plugin-shopify-theme-schema": "0.1.0",
+        "@types/node": "^20.8.8",
+        "@vitejs/plugin-vue": "^4.4.0",
+        "eslint": "^8.52.0",
+        "prettier": "^3.0.3",
+        "typescript": "^5.2.2",
+        "vite": "^4.0.1",
+        "vite-plugin-shopify": "^2.2.1",
+        "vite-plugin-static-copy": "^0.17.0",
+        "vite-plugin-windicss": "^1.9.1",
+        "vue-tsc": "^1.8.20",
+        "windicss": "^3.5.6"
+    },
+    "config": {
+        "eslint": {
+            "extensions": "ts,js,cjs,mjs",
+            "path": ".es*,*,**/*",
+            "config": ".eslintrc.cjs"
+        },
+        "prettier": {
+            "extensions": "liquid,ts,js,cjs,mjs,cts,json,yaml,yml,graphql,md",
+            "path": "*,**/*",
+            "config": "prettier.config.cjs"
+        },
+        "commitizen": {
+            "path": "@commitlint/cz-commitlint"
+        }
+    },
+    "keywords": [],
+    "dependencies": {
+        "type-fest": "^4.5.0",
+        "vue": "^3.3.6"
+    }
+}
