@@ -1,0 +1,30 @@
+<div class='page-width'>
+  {% for collection in collections %}
+    {% unless collection.handle == 'frontpage' %}
+      GILL{{ collection.id }}
+      <div class='grid grid--no-gutters grid--uniform collection'>
+        <div class='grid__item small--one-half medium-up--one-fifth'>
+          {% if collection.image %}
+            {% assign collection_image = collection | img_url: '480x480' %}
+          {% else %}
+            {% assign collection_image = collection.products.first | img_url: '480x480' %}
+          {% endif %}
+          <a href='{{ collection.url }}' class='collection-card' style='background-image: url({{ collection_image }});'>
+            <div class='collection-card__meta'>
+              <p class='h1 collection-card__title'>{{ collection.title }}</p>
+              <p class='collection-card__subtext'>{{ 'collections.general.view_all' | t }}</p>
+            </div>
+          </a>
+        </div>
+        {% for product in collection.products limit: 4 %}
+          {% comment %}
+            Hide the last product for a better mobile view
+          {% endcomment %}
+          <div class='grid__item small--one-half medium-up--one-fifth{% if forloop.index == 4 %} small--hide{% endif %}'>
+            {% include 'product-card', product: product %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>

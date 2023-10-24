@@ -1,0 +1,123 @@
+<div class='page-width'>
+  {% assign blocks_count = section.blocks.size %}
+
+  {% case blocks_count %}
+    {% when 1 %}
+      {% assign grid_item_width = 'medium-up--one-half' %}
+    {% when 2 %}
+      {% assign grid_item_width = 'one-half' %}
+    {% when 3 %}
+      {% assign grid_item_width = 'medium-up--one-third' %}
+    {% when 4 %}
+      {% assign grid_item_width = 'one-half medium-up--one-quarter' %}
+    {% when 5 %}
+      {% assign grid_item_width = 'medium-up--one-third' %}
+    {% when 6 %}
+      {% assign grid_item_width = 'medium-up--one-third' %}
+  {% endcase %}
+
+  <div class='grid grid--no-gutters'>
+    {% for block in section.blocks %}
+      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+      {% if blocks_count == 5 and forloop.index > 3 %}
+        {% assign grid_item_width = 'medium-up--one-half' %}
+      {% endif %}
+      <div class='grid__item {{ grid_item_width }}' {{ block.shopify_attributes }}>
+        {% assign featured_collection = collections[block.settings.collection] %}
+
+        {% if featured_collection.empty? %}
+          {% assign block_title = 'homepage.onboarding.collection_title' | t %}
+          {% assign image_src = '' %}
+        {% else %}
+          {% assign block_title = featured_collection.title %}
+          {% if featured_collection.image %}
+            {% assign image_src = featured_collection.image.src | img_url: '480x480' %}
+          {% else %}
+            {% assign image_src = featured_collection.products.first.featured_image | img_url: '480x480' %}
+          {% endif %}
+        {% endif %}
+
+        <a
+          href='{{ featured_collection.url }}'
+          title='{{ 'collections.general.link_title' | t: title: featured_collection.title }}'
+          class='featured-card{% if section.settings.stretch_collection_image %} featured-card--cover{% endif %}'
+          {% if section.settings.stretch_collection_image %}
+            style="background-image: url('{{ image_src }}')"
+          {% endif %}>
+          {% if section.settings.stretch_collection_image and featured_collection.empty? %}
+            <div class='placeholder-background'>
+              {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {% endif %}
+          <div class='featured-card__header{% if section.settings.stretch_collection_image %} featured-card__header--background{% endif %}'>
+            <p class='h1 featured-card__title'>{{ block_title }}</p>
+            <span class='featured-card__action'>{{ 'collections.general.view_all' | t }}</span>
+          </div>
+          {% unless section.settings.stretch_collection_image %}
+            <div class='featured-card__image-wrapper'>
+              {% if featured_collection.empty? %}
+                <div class='featured-card__image'>
+                  {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {% else %}
+                <img
+                  src='{{ image_src }}'
+                  alt='{{ featured_collection.image.alt | escape }}'
+                  class='featured-card__image'>
+              {% endif %}
+            </div>
+          {% endunless %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Collection list",
+  "class": "index-section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "stretch_collection_image",
+      "label": "Stretch collection image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection list",
+      "category": "Collection",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+{% assign blog = blogs[section.settings.blog] %}
+<div class='page-width'>
+  <div class='section-block section-block--padding'>
+    {% if section.settings.title_enable %}
+      <div class='section-block__header text-center'>
+        <h4 class='h1--mini section-block__title'>{{ blog.title }}</h4>
+        <a href='{{ blog.url }}' class='section-block__subtext'>{{ 'blogs.article.view_all' | t }}</a>
+      </div>
+    {% endif %}
+    <div class='flex flex--grid flex--no-gutter'>
+      {% for article in blog.articles limit: 3 %}
+        <div class='flex__item medium-up--one-third'>
+          <a href='{{ article.url }}' class='article-block'>
+            {% if article.image %}
+              <div
+                class='article-block__image'
+                style="background-image: url('{{ article | img_url: '480x480' }}')"></div>
+            {% endif %}
+            <div class='article-block__info'>
+              <span class='article-block__date'>
+                {{ article.published_at | time_tag: format: 'month_day_year' }}
+              </span>
+              <h6 class='article-block__title'>{{ article.title }}</h6>
+              <p>{{ 'blogs.article.read_more' | t }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_enable",
+      "label": "Show header",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts",
+      "category": "Blog",
+      "settings": {
+        "blog": "News"
+      }
+    }
+  ]
+}
+{% endschema %}
