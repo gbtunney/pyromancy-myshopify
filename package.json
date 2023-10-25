@@ -14,7 +14,7 @@
         "build:vue-ts": "vue-tsc",
         "\n========== DEV >> ==========": "",
         "dev": "pnpm run build:vite && pnpm run vite:serve && pnpm exec shopify theme dev",
-                                 "vite:serve": "vite",
+        "vite:serve": "vite",
         "shopify:dev": "shopify theme dev --path . --store=pyromancy.myshopify.com --theme-editor-sync --live-reload full-page",
         "\n========== PUBLISH >> ==========": "",
         "\n========== CLEAN >> ==========": "",
